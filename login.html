@@ -13,6 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="./css/login.css" rel="stylesheet">
   <style>
     html, body{
       height: 100%;
@@ -33,17 +34,26 @@
       max-width: 330px;
       padding: 15px;
       margin: auto;
+
     }
   </style>
 </head>
 
 <body class="text-center">
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div>
+      <img src="./img/login.png" alt="No cargo la imagen">
+      <h1 class="h2 mb-3 front-weight-normal"> Please sign in </h1>
+      <label for="putEmail" class="email"></label>
+      <input type="email" placeholder="Email address" required>
+      <label for="putPassword"></label> <br>
+      <input type="password" placeholder="Password" required>
+      <div>
+        <label>
+          <input type="checkbox" value="remember"> Remember me 
+        </label>
+      </div>
+      <input type="submit" value="Log In">
     </div>
   </div>
 
