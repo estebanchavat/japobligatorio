@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 input {
     margin-top: 10px;
 }
@@ -13,19 +12,7 @@ body input[type="submit"] {
     border-radius: 20px;
   
 }
-=======
-input {
-    margin-top: 10px;
-}
 
-body input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 50px;
-    width: 80px;
-    background: #229FBC;
-    color: white;
-    border-radius: 20px;
-  
+body div[class="loginGoogle"] {
+align-items: center;
 }
->>>>>>> Stashed changes
