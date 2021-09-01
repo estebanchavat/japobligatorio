@@ -60,7 +60,7 @@
       <img src="./img/login.png" alt="No cargo la imagen">
       <h1 class="h2 mb-3 front-weight-normal"> Please sign in</h1>
       <label for="putEmail"></label>
-      <input type="email" placeholder="Email address" required/>
+      <input type="email" placeholder="Email address" id="email" required/>
       <label for="putPassword"></label> <br>
       <input type="password" placeholder="Password" required/>
       <div>
@@ -68,7 +68,7 @@
           <input type="checkbox" value="remember"> Remember me 
         </label>
       </div>
-      <input type="submit" value="Log In">
+      <input type="submit" onclick="ingreso()" value="Log In">
 
     <!-- Login Google  -->
     <div class="loginGoogle">
