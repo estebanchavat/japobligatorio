@@ -63,7 +63,7 @@ function showCategoriesList(){
             `
         }
 
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+        document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
     }
 }
 
@@ -133,4 +133,60 @@ document.addEventListener("DOMContentLoaded", function(e){
 
         showCategoriesList();
     });
+
+
+// Buscador de Productos - Desafiate 
+
+const Productos = document.getElementById("prod-list-container");
+const searchBar = document.getElementById("search");
+let allproducts = [];
+
+searchBar.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase();
+
+    const filterproducts = allproducts.filter((product) => {
+        return (
+            product.name.toLowerCase().includes(searchString)
+        );
+    });
+    displayProducts(filterproducts);
+});
+
+const loadCharacters = async () => {
+    try {
+        const res = await fetch(PRODUCTS_URL);
+        allproducts = await res.json();
+        displayProducts(allproducts);
+    } catch (err) {
+        console.error(err);
+    }
+};
+
+const displayProducts = (allproducts) => {
+    const htmlString = allproducts
+        .map((product) => {
+            return `
+            <a href="category-info.html" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">`+ product.name +`</h4>
+                            <small class="text-muted">` + product.soldCount + ` vendidos</small>
+                        </div>
+                        <p class="mb-1">` + product.description + `</p>
+                        <p class="mb-1">`+ product.currency + " " + product.cost +  ` </p>
+                    </div>
+                </div>
+            </a>
+            `;
+        })
+        .join('');
+    Productos.innerHTML = htmlString;
+};
+
+loadCharacters();
+
 });
