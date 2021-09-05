@@ -6,7 +6,7 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-function sortCategories(criteria, array){
+function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
     {
@@ -35,7 +35,7 @@ function sortCategories(criteria, array){
     return result;
 }
 
-function showCategoriesList(){
+function showProductsList(){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < currentCategoriesArray.length; i++){
@@ -74,10 +74,10 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
         currentCategoriesArray = categoriesArray;
     }
 
-    currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
+    currentCategoriesArray = sortProducts(currentSortCriteria, currentCategoriesArray);
 
     //Muestro las categorías ordenadas
-    showCategoriesList();
+    showProductsList();
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -101,6 +101,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         sortAndShowCategories(ORDER_BY_PROD_COUNT);
     });
 
+ // Boton de Limpiar el rango de precio.
+
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
         document.getElementById("rangeFilterCountMin").value = "";
         document.getElementById("rangeFilterCountMax").value = "";
@@ -108,8 +110,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         minCount = undefined;
         maxCount = undefined;
 
-        showCategoriesList();
+        showProductsList();
     });
+
+    // Boton de Filtrar el rango de precio  
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
         //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
@@ -131,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             maxCount = undefined;
         }
 
-        showCategoriesList();
+        showProductsList();
     });
 
 
@@ -152,7 +156,7 @@ searchBar.addEventListener('keyup', (e) => {
     displayProducts(filterproducts);
 });
 
-const loadCharacters = async () => {
+const loadProducts = async () => {
     try {
         const res = await fetch(PRODUCTS_URL);
         allproducts = await res.json();
@@ -187,6 +191,6 @@ const displayProducts = (allproducts) => {
     Productos.innerHTML = htmlString;
 };
 
-loadCharacters();
+loadProducts();
 
 });
