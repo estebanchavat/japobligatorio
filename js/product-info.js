@@ -7,18 +7,29 @@ function showImagesGallery(array){
 
     for(let i = 0; i < array.length; i++){
         let imageSrc = array[i];
-
+        if (i == 0){
+   
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
-        `
+        <div class="carousel-item active">
+        <img src="${imageSrc}" class="d-block w-100" alt="">
+        <div class="carousel-caption d-none d-md-block">
+        <h5> ${product.name} - ${product.currency} ${product.cost} </h5>
+      </div>
+      </div>`
+        } else {
+            htmlContentToAppend += `
+            <div class="carousel-item">
+        <img src="${imageSrc}" class="d-block w-100" alt="">
+        <div class="carousel-caption d-none d-md-block">
+        <h5> ${product.name} - ${product.currency} ${product.cost} </h5>
+      </div>
+      </div>`
+        }
 
         document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
     }
 }
+
 
 // Productos relacionados
 

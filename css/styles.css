@@ -233,4 +233,23 @@ button.primaryContained:hover {
   color: #ffd100;
   font-weight: bold;
   font-size: 3em;
+  
+}
+
+#carrusel {
+    width: 50%;
+}
+
+#botones a {
+    text-shadow: -1px 1px #229FBC;
+    background-color: #54A396;
+    color: #F6EA73;
+}
+
+#botones a:hover {
+background-color: cornflowerblue;
+}
+
+#dropdownMenuButton {
+  background: #229FBC ;
 }
