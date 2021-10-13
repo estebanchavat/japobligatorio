@@ -1,59 +1,50 @@
-var cartproduct = {}
-
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-});
-
-getJSONData(CART_INFO_URL).then(function(carroObj){
-    if (carroObj.status === "ok")
-    {
-}
- 
-let cartproduct = carroObj.data;
-
-            // let nombre  = document.getElementById("categoryName");
-            // let cuenta = document.getElementById("categorycount");
-            // let preciounitario = document.getElementById("unitprice");
-            // let imagen = document.getElementById("images");
+document.addEventListener("DOMContentLoaded", () => {
+    getJSONData(CART_INFO_DESAFIATE_URL).then( carroObj => {
+        if (carroObj.status == "ok"){
+            let priceproduct = carroObj.data;
+            let articulos = priceproduct.articles 
+            let carrito = "";
+           
             
-        
-            // nombre.innerHTML = cartproduct.articles[0].name;
-            // cuenta.innerHTML = cartproduct.articles[0].count;
-            // preciounitario.innerHTML = cartproduct.articles[0].currency + " " +  cartproduct.articles[0].unitCost;
-            // imagen.innerHTML = cartproduct.articles[0].src;
+            
+            for (i= 0; i < articulos.length; i++){
+                let costonormalizado = cambio(articulos[i].currency, articulos[i].unitCost);
 
-});
+                carrito += `
+                <table class="table table-striped table-dark tabla" >
+            <tr>
+                <th scope="row"> * </th>
+                    <td> <img src="${articulos[i].src}"  class="imagetable"> </td>
+                    <td>` + articulos[i].name + `</td>
+                    <td>` + articulos[i].count + `</td>
+                    <td class="productprice"> ` + "UYU" + " " + costonormalizado + `</td>
+             </tr><br>
+             </table>
+                    `
+                 }
+                
+                document.getElementById("micarrito").innerHTML=carrito;
+        }
+    })
+})
 
-function productcart(array) {
-    var carrito = "";
-
-    for (i= 0; i < array.articles; i++){
-    
-        carrito = `  
-        <div class="row">
-        <div class="col-3">
-            <img src="` + array.articles.src + `" alt="``" class="img-thumbnail">
-        </div>
-        <div class="col">
-            <div class="d-flex w-100 justify-content-between">
-                <h4 class="mb-1">`+ array.articles.name +`</h4>
-                <small class="text-muted">` + array.articles.count + ` vendidos</small>
-            </div>
-            <p class="mb-1">`+ array.articles.currency + " " + array.articles.unitCost +  ` </p>
-        </div>
-    </div>
-        
-        `
-
-        document.getElementById("micarrito").innerHTML = carrito
+function sumar (){
+    let precios = document.getElementsByClassName("productprice")
+    let suma =0; 
+    for (i=0; i< precios.length; i++){
+        suma+= parseFloat(precios[i].innerHTML);
     }
-
+    document.getElementById("subtotal").innerHTML=(suma).toFixed;
 }
-productcart(cartproduct);
 
 
-
-
-
+function cambio(moneda,costo){
+ 
+    if ( moneda === "USD") {
+        return costo * 40; 
+    }
+    return costo
+}
