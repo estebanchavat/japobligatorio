@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -14,21 +15,21 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+    <nav class="site-header sticky-top py-1 bg-dark navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container d-flex flex-column flex-md-row justify-content-between collapse navbar-collapse">
+        <a class="py-2 d-none d-md-inline-block navbar-light navbar-expand-sm" href="home.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block navbar-light" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block navbar-light" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block navbar-light" href="sell.html">Vender</a>
         <!-- boton desplegable para mi carrito, login, salir -->
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
             <div id="logeo"></div>
           </button>
-          <div id="botones" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item " href="cart.html">Mi carrito</a><br>
-            <a class="dropdown-item " href="my-profile.html" > Mi Perfil </a><br>
-            <a class="dropdown-item " onclick="borrar()" href="index.html" > Salir </a>
+          <div id="botones" class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item navbar-light" href="cart.html">Mi carrito</a><br>
+            <a class="dropdown-item navbar-light" href="my-profile.html" > Mi Perfil </a><br>
+            <a class="dropdown-item navbar-light" onclick="borrar()" href="index.html" > Salir </a>
           </div>
         </div>
          <!-- fin de ejercicio -->
@@ -77,10 +78,11 @@
             </div>
           </div>
       </div>
-      <div class="row">
-          <div class="list-group" id="prod-list-container">
-          </div>
+      <div class="container">
+      <div class="row" id="prod-list-container">
+        
       </div>
+    </div>
   </div>
 </main>
     <footer class="text-muted bg-light">

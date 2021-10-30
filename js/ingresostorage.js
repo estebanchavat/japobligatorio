@@ -10,4 +10,5 @@ ingreso()
 
 function borrar() {
     localStorage.removeItem("Username");
+    localStorage.clear();
 }

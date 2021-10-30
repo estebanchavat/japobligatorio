@@ -16,6 +16,7 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
+      
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
@@ -34,13 +35,14 @@
         </div>
          <!-- fin de ejercicio -->
     </nav>
+  <div class="col-md-6 col-sm-12 mb-1 container">
     <main role="main" class="pb-5">
         <div class="text-center p-4">
             <h2>Categorías</h2>
             <p class="lead">Verás aquí todas las categorías del sitio.</p>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row"> 
                 <div class="col text-right">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                         <label class="btn btn-light active" id="sortAsc" >
@@ -81,7 +83,7 @@
                 <div class="list-group" id="cat-list-container">
                 </div>
             </div>
-        </div>
+    </div>
     </main>
     <footer class="text-muted bg-light">
       <div class="container">
@@ -91,7 +93,9 @@
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
-    </footer>
+    </div>
+    
+  </footer>
     <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

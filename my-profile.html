@@ -53,34 +53,166 @@
       </div>
        <!-- fin de ejercicio -->
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+ 
+<!-- Esta parta es de la entrega 6 dandole color al perfil -->
+<div class="container">
+  <div class="row flex-lg-nowrap">
+    <div class="col-12 col-lg-auto mb-2" style="width: 200px;">
+    </div>
+  
+    <div class="col">
+      <div class="row">
+        <div class="col mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="e-profile">
+                <div class="text-center text-sm-left mb-2 mb-sm-0">
+                  <!-- Comienzo de HTML referido a la imagen. -->
+
+                <div class="row">
+                  <div class="col-12 col-sm-auto mb-3">
+                    <div class="mx-auto" style="width: 140px;">
+                      <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239); ">
+                        <span  style="color: rgb(166, 168, 170); font: bold 8pt Arial;" ><img id="herephoto" src="" alt=""></span>
+                      </div>
+                      
+                      <div>
+                        <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                          <div class="text-center text-sm-center">
+                            <span class="badge badge-secondary">Cliente</span>
+                          </div>
+                        </div>
+                        <input type="file" onchange="image64()"  placeholder="">
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+                <!-- Termina el HTML referido a la imagen. -->
+
+                <ul class="nav nav-tabs">
+                  <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
+                </ul>
+                <div class="tab-content pt-3 ite">
+                  <div class="tab-pane active">
+                    <form class="form" novalidate="">
+                      <div class="row">
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Name</label>
+                                <div class="form-control" type="text"  placeholder="" value="" id="nombre"><div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Last Name</label>
+                                <div class="form-control" type="text"  placeholder="" value="" id="apellido"></div>
+                              <div class="form-group">
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Age</label>
+                                <div class="form-control text-sm-left" type="text"  placeholder="" value="" id="edad">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Phone</label>
+                                <div class="form-control" type="text"  placeholder="" value="" id="telefono"></div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label>Email</label>
+                                <div class="form-control" type="text" placeholder="Pon tu correo" id="gmail"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col mb-3">
+                              <div class="form-group">
+                                <label>About</label>
+                                <textarea class="form-control" type="text" rows="5" placeholder="Talk about me" id="textarea"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <Div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" value="Editar perfil">Edit Profile</button>
+                      </Div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+
+  
+<!-- Esta parta es de la entrega 6 dandole color al perfil -->
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <label for="name"> Name </label>
+        <input  type="text"  value="" id="name"><br><br>
+        <label for="lastname"> Last Name</label>
+        <input  type="text"  value="" id="lastname"><br><br>
+        <label for="age"> Age</label>
+        <input  type="date"  value="" id="age"><br><br>
+        <Label for="phone"> Phone</Label>
+        <input  type="text"  value="" id="phone"><br><br>
+        <label for="aboutme"> About me</label> <br>
+        <textarea rows="5" id="aboutme"></textarea>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="datauser(), showuser()">Save changes</button>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- Modal -->
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
@@ -91,3 +223,8 @@
 </body>
 
 </html>
+
+
+
+
+

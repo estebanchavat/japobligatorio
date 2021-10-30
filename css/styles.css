@@ -262,3 +262,8 @@ height: 100px;
 .table th {
   margin-left: 80%;
 }
+
+#herephoto {
+  width: 140px;
+  height: 140px;
+}
