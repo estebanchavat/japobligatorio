@@ -69,6 +69,7 @@
             <th scope="col">Price</th>
             <th scope="col">Count</th>
             <th scope="col">Subtotal</th>
+            <th></th>
 
           </tr>
         </thead>
@@ -82,6 +83,7 @@
             <th></th>
             <th> Costo de envio</th>
             <th id="costoenvio"></th>
+            <th></th>
           </tr>
           <tr>
             <th></th>
@@ -90,6 +92,7 @@
             <th></th>
             <th>Total </th>
             <th id="total"></th>
+            <th></th>
           </tr>
           <tr>
             <th></th>
@@ -98,8 +101,10 @@
             <th></th>
             <th> Total con envio </th>
             <th id="totalenvio"></th>
+            <th></th>
           </tr>
           <tr>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>
@@ -156,13 +161,13 @@
 
       <dd>
         <h2 class="text-center p-4" > Dirección de Envío</h2><hr>
-        <form name="formulario" method="post">
+        <form name="formulario" action="http://localhost:3000/compra" method="post">
           <!-- Datos del formulario -->
           <div class="text-center d-flex flex-column align-items-center">
-         <span> Dirección: <input type="text" name="usuario" /></span> <br>
-         <span> Esquina: <input type="text" name="usuario" /></span><br>
-         <span> Número: <input type="text" name="usuario" /></span><br>
-            <span> País: <input type="text" name="usuario" /></span> <br> <input type="submit" value="Enviar formulario" />
+         <span> Dirección: <input type="text" name="direccion" /></span> <br>
+         <span> Esquina: <input type="text" name="esquina" /></span><br>
+         <span> Número: <input type="text" name="numero" /></span><br>
+            <span> País: <input type="text" name="pais" /></span> <br>  <button type="submit" value="Enviar formulario"> submit </button>
         </div>
         </form>
       </dd>

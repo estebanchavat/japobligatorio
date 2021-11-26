@@ -1,4 +1,4 @@
-
+let articulos = [];
 var sumaT =0;
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -8,37 +8,41 @@ document.addEventListener("DOMContentLoaded", () => {
     getJSONData(CART_INFO_DESAFIATE_URL).then( carroObj => {
         if (carroObj.status == "ok"){
             let priceproduct = carroObj.data;
-            let articulos = priceproduct.articles 
-            let carrito = "";
-           
-            
-            
-            for (i= 0; i < articulos.length; i++){
-                let costonormalizado = cambio(articulos[i].currency, articulos[i].unitCost);
-
-                carrito += `
-                <table>
-            <tr>
-                    <td> <img src="${articulos[i].src}"  class="imagetable"> </td>
-                    <td>` + articulos[i].name + `</td>
-                    <td>` + articulos[i].count + `</td>
-                    <td > ` + "UYU" + " " + ` <span class="productprice"> ` + costonormalizado +`  </span></td>
-                    <td ><input type='number' onchange="sumar()"  value=1 min="0" </td>
-                    <td id="subTotal${i}" class='precio' > ` + costonormalizado + ` </td>
-                    </tr>
-
-             </tr><br>
-             </table>
-                    `
-                 }
-                
-                document.getElementById("micarrito").innerHTML=carrito;
-                sumar();
+            articulos = priceproduct.articles 
+   
+            mostrar();
         }
     })
 })
 
 
+function mostrar() {
+    let carrito = "";
+           
+  
+    for (i= 0; i < articulos.length; i++){
+        let costonormalizado = cambio(articulos[i].currency, articulos[i].unitCost);
+
+        carrito += `
+        <table>
+    <tr>
+            <td> <img src="${articulos[i].src}"  class="imagetable"> </td>
+            <td>` + articulos[i].name + `</td>
+            <td>` + articulos[i].count + `</td>
+            <td > ` + "UYU" + " " + ` <span class="productprice"> ` + costonormalizado +`  </span></td>
+            <td ><input type='number' onchange="sumar()"  value=1 min="0" </td>
+            <td id="subTotal${i}" class='precio' > ` + costonormalizado + ` </td>
+            <td> <a onclick="deleteRow(${i})" class="btn btn-danger" data-abc="true"> <i class="fa fa-trash"></i> Remover </a> </td>
+            </tr>
+
+     </tr><br>
+     </table>
+            `
+         }
+        
+        document.getElementById("micarrito").innerHTML=carrito;
+        sumar();
+}
 
 function sumar (){
     let precios = document.getElementsByClassName("productprice")
@@ -124,3 +128,10 @@ function bank(){
 }
    
 
+
+function deleteRow(r)
+    {
+
+    articulos.splice(r, 1);
+    mostrar();
+    }
